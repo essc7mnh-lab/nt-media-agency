@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[next]/internal/font/google/cairo_c1514620.module.css"],"sourcesContent":["@font-face {\n    font-family: 'Cairo Fallback';\n    src: local(\"Arial\");\n    ascent-override: 137.65%;\ndescent-override: 60.32%;\nline-gap-override: 0.00%;\nsize-adjust: 94.66%;\n\n}\n.className {\n    font-family: 'Cairo', 'Cairo Fallback';\n    font-style: normal;\n\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;;AASA","ignoreList":[0]}}]
+}
