@@ -5,6 +5,10 @@ import { PricingSection } from '../components/sections/PricingSection';
 import { ServicesSection } from '../components/sections/ServicesSection';
 import { NoteBanner } from '../components/sections/NoteBanner';
 import { WhatsAppButton } from '../components/ui/WhatsAppButton';
+import { StorePlatformsMarquee } from '../components/sections/StorePlatformsMarquee'; // ◄ استيراد الشريط
+import { ChannelTemplatesSection } from '../components/sections/ChannelTemplatesSection';
+
+
 
 export default function Home() {
   return (
@@ -15,6 +19,9 @@ export default function Home() {
       {/* المحتوى الرئيسي */}
       <main className="flex-grow relative z-10">
         <HeroSection />
+
+        <StorePlatformsMarquee /> {/* ◄ إضافة شريط المنصات */}
+        <ChannelTemplatesSection />
         <PricingSection />
         <ServicesSection />
         <NoteBanner />
