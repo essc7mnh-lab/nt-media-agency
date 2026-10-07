@@ -11,7 +11,6 @@ import {
   Code2 
 } from 'lucide-react';
 import { heroShowcaseData } from '../../data/showcaseData';
-import Link from 'next/link';
 
 export const HeroSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(2);
@@ -344,9 +343,9 @@ export const HeroSection: React.FC = () => {
         {/* شبكة الأيقونات الأربع */}
         <div className="grid grid-cols-2 gap-5 sm:gap-8 max-w-[290px] sm:max-w-[360px] mx-auto justify-items-center">
           {mainServices.map((service, idx) => (
-            <Link 
+            <a 
               key={service.slug} 
-              href={`/services/${service.slug}`}
+              href="#services"
               className="flex flex-col items-center gap-2.5 group cursor-pointer text-center w-full"
             >
               {/* المربع الأبيض الناصع مع ظل ناعم فائق النعومة */}
@@ -382,7 +381,7 @@ export const HeroSection: React.FC = () => {
               <span className="font-mono text-slate-400 font-medium text-[11px] sm:text-xs tracking-wider">
                 {service.titleEn}
               </span>
-            </Link>
+            </a>
           ))}
         </div>
 
