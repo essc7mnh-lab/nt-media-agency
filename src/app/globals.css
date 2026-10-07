@@ -1,81 +1,108 @@
 @import "tailwindcss";
 
 @layer base {
+  :root {
+    --font-sans: var(--font-cairo), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
-    /* لون كحلي أردوازي أفتح ومريح للعين */
-    background-color: #0d1222;
-    color: #F8FAFC;
+    /* النمط الفاتح الهادئ ذو العمق الطبيعي (Clean Editorial Light Mode) */
+    background-color: #F8FAFC;
+    color: #0F172A;
     overflow-x: hidden;
+    letter-spacing: normal;
+  }
+
+  /* تراتبية العناوين (Typography Hierarchy): حادة وواضحة وثقيلة بلون #0F172A */
+  h1, h2, h3, h4, h5, h6 {
+    color: #0F172A;
+    font-weight: 800;
+    letter-spacing: normal;
+    text-wrap: balance;
+  }
+
+  /* النصوص الفرعية والوصف: وزن عادي مع تباعد أسطر مريح ولون رمادي متوسط #64748B */
+  p {
+    color: #64748B;
+    line-height: 1.75;
+    text-wrap: pretty;
   }
 }
 
-/* تدرج هوية NT */
+/* تدرج هوية NT بنقاء وحضور تحريري راقٍ */
 .brand-gradient {
-  background: linear-gradient(135deg, #22D3EE 0%, #6366F1 50%, #8B5CF6 100%);
+  background: linear-gradient(135deg, #0284C7 0%, #4F46E5 50%, #7C3AED 100%);
 }
 
 .brand-gradient-text {
-  background: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #C084FC 100%);
+  background: linear-gradient(135deg, #0284C7 0%, #4338CA 50%, #6D28D9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* بطاقات الكحلي الفاتح مع بروز الحواف */
+/* بطاقات بيضاء ناصعة مع حدود ناعمة وظلال طفو طبيعية */
 .premium-glass-card {
-  background: linear-gradient(180deg, rgba(30, 41, 74, 0.7) 0%, rgba(20, 27, 51, 0.8) 100%);
+  background: #FFFFFF;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.4);
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 10px 25px -5px rgba(15, 23, 42, 0.05);
 }
 
 .premium-glass-card:hover {
-  border-color: rgba(56, 189, 248, 0.4);
-  box-shadow: 0 20px 40px -10px rgba(56, 189, 248, 0.15);
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 20px 35px -5px rgba(15, 23, 42, 0.08);
 }
-/* شبكة تقنية هندسية ناعمة تملأ الفراغ وتتلاشى للأطراف */
+
+/* شبكة تقنية هندسية ناعمة خافتة على خلفية فاتحة */
 .bg-tech-grid {
   background-size: 44px 44px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
   mask-image: radial-gradient(ellipse 65% 55% at 50% 25%, #000 40%, transparent 100%);
   -webkit-mask-image: radial-gradient(ellipse 65% 55% at 50% 25%, #000 40%, transparent 100%);
 }
 
-/* توهج هالة الأورورا الناعمة */
+/* توهج هالة محيطية ناعمة وخفيفة جداً */
 .aurora-glow {
-  background: radial-gradient(circle at 50% 10%, rgba(34, 211, 238, 0.12) 0%, rgba(99, 102, 241, 0.08) 40%, transparent 70%);
+  background: radial-gradient(circle at 50% 10%, rgba(2, 132, 199, 0.06) 0%, rgba(99, 102, 241, 0.04) 40%, transparent 70%);
 }
-/* تأثير التكبير والتوهج الذكي لروابط الهيدر */
+
+/* روابط التنقل بأسلوب تحريري راقٍ */
 .nav-link-epic {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s ease, text-shadow 0.25s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
   will-change: transform;
 }
 
-/* حركة التكبير والصعود للأعلى */
+/* حركة التكبير الخفيفة لروابط الهيدر */
 .nav-link-epic:hover {
-  transform: translateY(-3px) scale(1.14);
-  color: #38bdf8 !important; /* لون سماوي نيون */
-  text-shadow: 0 0 14px rgba(56, 189, 248, 0.75), 0 0 25px rgba(99, 102, 241, 0.5);
+  transform: translateY(-2px);
+  color: #0F172A !important;
 }
 
-/* الكبسولة الضوئية التي تتوهج خلف الكلمة */
+/* الكبسولة الهادئة خلف الرابط عند التحويم */
 .nav-link-epic::before {
   content: '';
   position: absolute;
-  inset: -3px -10px;
+  inset: -2px -8px;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, rgba(99, 102, 241, 0.1) 60%, transparent 80%);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
   opacity: 0;
-  transform: scale(0.85);
-  transition: all 0.25s ease-out;
+  transform: scale(0.9);
+  transition: all 0.2s ease-out;
   z-index: -1;
   pointer-events: none;
 }
@@ -84,17 +111,17 @@
   opacity: 1;
   transform: scale(1);
 }
-/* الخلفية الرسمية المعتمدة للموقع */
+
+/* الخلفية الرسمية المعتمدة للوكالة */
 .bg-official-agency {
-  background-color: #0d1222;
+  background-color: #F8FAFC;
   background-image: 
-    /* شبكة الخطوط التقنية الناعمة */
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
   background-size: 44px 44px;
 }
 
-/* هالة التوهج المضيئة التي تفتح لون الصفحة وتمنع العتمة */
+/* هالة إضاءة محيطية لطيفة ومريحة للعين */
 .ambient-glow-official {
-  background: radial-gradient(circle at 50% 15%, rgba(34, 211, 238, 0.14) 0%, rgba(99, 102, 241, 0.09) 35%, transparent 70%);
+  background: radial-gradient(circle at 50% 15%, rgba(2, 132, 199, 0.07) 0%, rgba(99, 102, 241, 0.04) 35%, transparent 70%);
 }
